@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="bg-success alert text-center"> Update Book</h2>
+                <form method="post" action="/update/<%= data._id %>">
+                    <div class="mb-3">
+                        <label for="book-name" class="form-label">Book Name</label>
+                        <input type="text" class="form-control " id="book-name" name="bookname" value="<%= data.bookname %>" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="authore" class="form-label">Authore</label>
+                        <input type="text" class="form-control" id="authore" name="authore" value="<%= data.authore%>" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    
+                </form>
+                <a href="/books" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>

@@ -1,0 +1,30 @@
+<% var i=1; %>
+<% data.forEach((item)=>{
+    %>
+    <tr>
+        <td>
+            <%= i++ %>
+        </td>
+        <td>
+            <%= item.bookname %>
+        </td>
+        <td>
+            <%= item.authore %>
+        </td>
+        <td>
+            <%= item.type %>
+        </td>
+        <td class="ms-4">
+            <form action="/edit/<%- item._id %>" method="get" class="d-inline">
+                <button class="btn" type="submit"> <i
+                        class="fa-solid fa-pen-to-square"></i></button>
+            </form>
+
+            <form action="/delete/<%- item._id %>" method="post" class="d-inline">
+                <button class="btn" type="submit"> <i
+                        class="fa-solid fa-trash-can-arrow-up text-danger"></i></button>
+            </form>
+
+        </td>
+    </tr>
+    <% }) %>

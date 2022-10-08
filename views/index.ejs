@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <form class="d-flex mt-5" action="/search/<%= data.key %>">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="btn btn-outline-success" type="submit"></input>
+          </form>
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="bg-success alert text-center">Add New Books</h2>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="book-name" class="form-label">Book Name</label>
+                        <input type="text" class="form-control " id="book-name" name="bookname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="authore" class="form-label">Authore</label>
+                        <input type="text" class="form-control" id="authore" name="authore">
+                    </div>
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="type" name="type">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-6 mt-5">
+                <h2 class="bg-info alert text-center">List of Books</h2>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Authore</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    <tbody>
+                        <%- include("./partials/show.ejs") %>
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
