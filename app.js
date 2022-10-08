@@ -1,5 +1,4 @@
 import express from 'express';
-import { join } from 'path';
 import connectDB from './database/connectdb.js';
 import web from "./routes/web.js";
 import * as dotenv from 'dotenv'
@@ -8,7 +7,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 const app = express();
-const DATABASE_URL = process.env.PORT || "mongodb://localhost:27017";
+const DATABASE_URL = process.env.PORT || "mongodb+srv://rahul:RSsmy11ssm@cluster0.kxxr0.mongodb.net/test";
 const __filename = fileURLToPath(import.meta.url);
 
 // get directory
